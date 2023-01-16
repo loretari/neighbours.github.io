@@ -1,0 +1,192 @@
+/*min 1344px (Smaller desktop)*/
+
+@media (max-width: 84em) {
+}
+
+/*min 1320px (Landscape tablets*/
+
+@media (max-width: 82.5em) {
+
+    .countries {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .login {
+        margin-bottom: 4rem;
+        padding: 4.5rem;
+    }
+}
+
+/*min 1000px (Tablets)*/
+
+@media (max-width: 62.5em) {
+    .welcome {
+        font-size: 5.3rem;
+    }
+    .type {
+        font-size: 4.3rem;
+        margin-bottom: 4rem;
+        margin-top: 1rem;
+    }
+    .countries {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .login {
+        margin-bottom: 4rem;
+        padding: 4rem;
+    }
+    .message {
+        margin-bottom: 3rem;
+    }
+}
+
+/*min 880px (Tablets)*/
+
+@media (max-width: 55em) {
+    .welcome {
+        font-size: 4.3rem;
+    }
+    .type {
+        font-size: 3rem;
+        padding: 1rem;
+        margin-bottom: 4rem;
+        margin-top: 1rem;
+    }
+    .login {
+        margin-bottom: 4rem;
+        padding: 3rem;
+    }
+}
+
+/*min 720px (Small Tablets)*/
+
+@media (max-width: 45em) {
+    .welcome {
+        font-size: 3.8rem;
+    }
+    .type {
+        font-size: 3.2rem;
+        margin-bottom: 2rem;
+        margin-top: 0;
+    }
+    .login {
+        margin-bottom: 4rem;
+        padding: 2.5rem;
+    }
+}
+
+/*min 660px (Phones)*/
+
+@media (max-width: 41em) {
+    .welcome {
+        font-size: 3.1rem;
+        padding: 1rem;
+    }
+    .type {
+        font-size: 2.8rem;
+        margin-bottom: 2rem;
+        margin-top: 0.5rem;
+        padding: 1rem;
+    }
+    .login {
+        margin-bottom: 4rem;
+        width: 44rem;
+    }
+    .message--visible {
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+        justify-content: center;
+    }
+    .neighbour {
+        margin-right: 0;
+        justify-self: center;
+        align-self: center;
+    }
+
+}
+
+/*min 520px (Phones)*/
+
+@media (max-width: 32.5em) {
+    .welcome {
+        font-size: 2.5rem;
+        padding: 1rem;
+    }
+    .type {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+        margin-top: 0.5rem;
+        padding: 1rem;
+    }
+    .login {
+        margin-bottom: 4rem;
+        width: 38rem;
+        padding: 2rem;
+    }
+    .login_input {
+        font-size: 1.3rem;
+    }
+    .message--visible {
+        font-size: 1.5rem;
+        margin-bottom: 2rem;
+    }
+    .countries {
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+        justify-content: center;
+    }
+    .country_name {
+        font-size: 2.4rem;
+    }
+    .country_region {
+        font-size: 1.8rem;
+    }
+    .country_row span {
+        font-size: 1.8rem;
+    }
+    .neighbour {
+        margin-right: 0;
+        justify-self: center;
+        align-self: center;
+    }
+}
+
+/*min 390px (Small Phones)*/
+
+@media (max-width: 24.4em) {
+    .welcome {
+        font-size: 2rem;
+        padding: 1rem;
+    }
+    .type {
+        font-size: 1.5rem;
+        margin-bottom: 2rem;
+        margin-top: 0.5rem;
+        padding: 1rem;
+    }
+    .login {
+        margin-bottom: 4rem;
+        width: 30rem;
+        padding: 2rem;
+    }
+    .login_input {
+        font-size: 1.2rem;
+        width: 30rem;
+    }
+    .login_btn {
+        font-size: 2.5rem;
+    }
+    .message--visible {
+        font-size: 1.2rem;
+    }
+    .country_name {
+        font-size: 2rem;
+    }
+    .country_region {
+        font-size: 1.2rem;
+    }
+    .country_row span {
+        font-size: 1.5rem;
+    }
+}
