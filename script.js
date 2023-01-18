@@ -39,4 +39,4 @@ renderCountry(data[0]);
 
 
 
-loadCountryAndNeighbour('portugal1');
+loadCountryAndNeighbour('portugal');
