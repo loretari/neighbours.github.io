@@ -28,13 +28,15 @@ const loadCountryAndNeighbour = async function (country) {
         const res = await fetch(`https://restcountries.com/v3.1/name/${country}`);
         const data = await res.json();
         console.log(data);
+renderCountry(data[0]);
+        countriesContainer.style.opacity = 1;
     } catch (err) {
         console.error('...something went wrong... Check your typing and try again!')
     }
-    
-    countriesContainer.style.opacity = 1;
+
+
 };
 
 
 
-loadCountryAndNeighbour('portugal');
+loadCountryAndNeighbour('portugal1');
