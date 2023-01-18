@@ -2,6 +2,9 @@
 
 const btn = document.querySelector('.login_btn');
 const countriesContainer = document.querySelector('.countries');
+const message = document.querySelector('.message');
+
+const inputCountry = document.querySelector('.login_input');
 
 
 const renderCountry = function (data, className = '') {
@@ -25,18 +28,58 @@ const renderCountry = function (data, className = '') {
 
 const loadCountryAndNeighbour = async function (country) {
     try {
+        clearMessage();
         const res = await fetch(`https://restcountries.com/v3.1/name/${country}`);
         const data = await res.json();
         console.log(data);
 renderCountry(data[0]);
         countriesContainer.style.opacity = 1;
+
+    //    Get neighbour country 2
+        const neighboursArr = data[0].borders;
+        if (neighboursArr) {
+            console.log(neighboursArr);
+            neighboursArr.forEach(async (neighbour, i) => {
+                await wait(i * 300);
+                const neighbourRes = await fetch(`https://restcountries.com/v3.1/alpha/${neighbour}`);
+                const neighbourData = await neighbourRes.json();
+                renderCountry(neighbourData[0], 'neighbour');
+            });
+        } else {
+renderMessage('It is lonely island!');
+        }
+
+
+
     } catch (err) {
-        console.error('...something went wrong... Check your typing and try again!')
+        renderMessage('...something went wrong... Check your typing and try again!')
     }
 
 
 };
 
 
+const renderMessage = function (msg) {
+    message.innerHTML = msg;
+    message.classList.add('message--visible');
+}
 
-loadCountryAndNeighbour('portugal');
+const clearMessage = function () {
+    message.innerHTML = '';
+    message.classList.remove('message--visible');
+}
+
+const wait = milliseconds => {
+    return new Promise(resolve => setTimeout(resolve, milliseconds));
+};
+
+btn.addEventListener('click', function (e) {
+    e.preventDefault();
+       const countries = document.querySelectorAll('.country');
+    countries.forEach(country => country.remove());
+
+    loadCountryAndNeighbour(`${inputCountry.value}`);
+    inputCountry.value = '';
+})
+
+
